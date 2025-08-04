@@ -9,18 +9,16 @@
     </style>
 </head>
 <body>
+  <div><label id="xLabel">Valeur de X :</label><label id="xValue">--</label></div>
+  <div><label id="yLabel">Valeur de Y :</label><label id="yValue">--</label></div>
+    
     <script>
-        window.addEventListener("DeviceOrientation", handleOrientation);
+        window.addEventListener("deviceorientation", handleOrientation);
       
         function handleOrientation(event) {
             document.getElementById("xValue").innerHTML = event.beta || 0;  // Inclinaison avant/arrière
             document.getElementById("yValue").innerHTML = event.gamma || 0; // Inclinaison gauche/droite
         }
     </script>
-  
-  <div><label id="xLabel">Valeur de X :</label><label id="xValue">--</label></div>
-  <div><label id="yLabel">Valeur de Y :</label><label id="yValue">--</label></div>
-    <label>Tjr Pas</label>
-   
 </body>
 </html>
