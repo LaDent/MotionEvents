@@ -13,7 +13,6 @@
         window.addEventListener("DeviceOrientation", handleOrientation);
       
         function handleOrientation(event) {
-            alert('go');
             document.getElementById("xValue").innerHTML = event.beta || 0;  // Inclinaison avant/arrière
             document.getElementById("yValue").innerHTML = event.gamma || 0; // Inclinaison gauche/droite
         }
