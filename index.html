@@ -5,20 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Device Orientation</title>
     <style>
-
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        div {
+            margin: 10px;
+        }
+        label {
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
-  <div><label id="xLabel">Valeur de X :</label><label id="xValue">--</label></div>
-  <div><label id="yLabel">Valeur de Y :</label><label id="yValue">--</label></div>
-    
-    <script>
-        window.addEventListener("deviceorientation", handleOrientation);
-      
-        function handleOrientation(event) {
-            document.getElementById("xValue").innerHTML = event.beta || 0;  // Inclinaison avant/arrière
-            document.getElementById("yValue").innerHTML = event.gamma || 0; // Inclinaison gauche/droite
-        }
-    </script>
+  <div>
+    <label id="xLabel">Valeur de X :</label>
+    <label id="xValue">--</label>
+  </div>
+  <div>
+    <label id="yLabel">Valeur de Y :</label>
+    <label id="yValue">--</label>
+  </div>
+
+  <script>
+    window.addEventListener("deviceorientation", handleOrientation);
+
+    function handleOrientation(event) {
+        document.getElementById("xValue").innerHTML = event.beta ? event.beta.toFixed(2) : 0;
+        document.getElementById("yValue").innerHTML = event.gamma ? event.gamma.toFixed(2) : 0;
+    }
+  </script>
 </body>
 </html>
