@@ -10,7 +10,7 @@
 </head>
 <body>
     <script>
-        setEventListener("DeviceOrientation", handleOrientation);
+        addEventListener("DeviceOrientation", handleOrientation);
       
         function handleOrientation(event) {
             document.getElementById("xValue").innerHTML = event.beta || 0;  // Inclinaison avant/arrière
