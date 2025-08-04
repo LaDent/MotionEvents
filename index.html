@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boule Roulante</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        setEventListener("DeviceOrientation", handleOrientation);
+      
+        function handleOrientation(event) {
+            document.getElementById(xValue).innerHTML = event.beta || 0;  // Inclinaison avant/arrière
+            document.getElementById(yValue).innerHTML = event.gamma || 0; // Inclinaison gauche/droite
+        }
+    </script>
+  
+  <label id="xLabel">Valeur X</label><label id="xValue"></label>
+  <label id="yLabel">Valeur X</label><label id="yValue"></label>
+   
+</body>
+</html>
